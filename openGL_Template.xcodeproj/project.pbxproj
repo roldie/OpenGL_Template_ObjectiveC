@@ -14,12 +14,12 @@
 		0367A5B6190C646B00D11AA8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367A5B5190C646B00D11AA8 /* OpenGLES.framework */; };
 		0367A5BC190C646B00D11AA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0367A5BA190C646B00D11AA8 /* InfoPlist.strings */; };
 		0367A5BE190C646B00D11AA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0367A5BD190C646B00D11AA8 /* main.m */; };
-		0367A5C2190C646B00D11AA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0367A5C1190C646B00D11AA8 /* AppDelegate.m */; };
+		0367A5C2190C646B00D11AA8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0367A5C1190C646B00D11AA8 /* AppDelegate.mm */; };
 		0367A5C5190C646B00D11AA8 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0367A5C3190C646B00D11AA8 /* Main_iPhone.storyboard */; };
 		0367A5C8190C646B00D11AA8 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0367A5C6190C646B00D11AA8 /* Main_iPad.storyboard */; };
 		0367A5CA190C646B00D11AA8 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0367A5C9190C646B00D11AA8 /* Shader.fsh */; };
 		0367A5CC190C646B00D11AA8 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 0367A5CB190C646B00D11AA8 /* Shader.vsh */; };
-		0367A5CF190C646B00D11AA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0367A5CE190C646B00D11AA8 /* ViewController.m */; };
+		0367A5CF190C646B00D11AA8 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0367A5CE190C646B00D11AA8 /* ViewController.mm */; };
 		0367A5D1190C646B00D11AA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0367A5D0190C646B00D11AA8 /* Images.xcassets */; };
 		0367A5D8190C646B00D11AA8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367A5D7190C646B00D11AA8 /* XCTest.framework */; };
 		0367A5D9190C646B00D11AA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367A5AD190C646B00D11AA8 /* Foundation.framework */; };
@@ -50,13 +50,13 @@
 		0367A5BD190C646B00D11AA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0367A5BF190C646B00D11AA8 /* openGL_Template-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "openGL_Template-Prefix.pch"; sourceTree = "<group>"; };
 		0367A5C0190C646B00D11AA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0367A5C1190C646B00D11AA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0367A5C1190C646B00D11AA8 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		0367A5C4190C646B00D11AA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0367A5C7190C646B00D11AA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		0367A5C9190C646B00D11AA8 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
 		0367A5CB190C646B00D11AA8 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
 		0367A5CD190C646B00D11AA8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0367A5CE190C646B00D11AA8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0367A5CE190C646B00D11AA8 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		0367A5D0190C646B00D11AA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0367A5D6190C646B00D11AA8 /* openGL_TemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = openGL_TemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0367A5D7190C646B00D11AA8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -127,13 +127,13 @@
 			isa = PBXGroup;
 			children = (
 				0367A5C0190C646B00D11AA8 /* AppDelegate.h */,
-				0367A5C1190C646B00D11AA8 /* AppDelegate.m */,
+				0367A5C1190C646B00D11AA8 /* AppDelegate.mm */,
 				0367A5C3190C646B00D11AA8 /* Main_iPhone.storyboard */,
 				0367A5C6190C646B00D11AA8 /* Main_iPad.storyboard */,
 				0367A5C9190C646B00D11AA8 /* Shader.fsh */,
 				0367A5CB190C646B00D11AA8 /* Shader.vsh */,
 				0367A5CD190C646B00D11AA8 /* ViewController.h */,
-				0367A5CE190C646B00D11AA8 /* ViewController.m */,
+				0367A5CE190C646B00D11AA8 /* ViewController.mm */,
 				0367A5D0190C646B00D11AA8 /* Images.xcassets */,
 				0367A5B8190C646B00D11AA8 /* Supporting Files */,
 			);
@@ -269,8 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0367A5CF190C646B00D11AA8 /* ViewController.m in Sources */,
-				0367A5C2190C646B00D11AA8 /* AppDelegate.m in Sources */,
+				0367A5CF190C646B00D11AA8 /* ViewController.mm in Sources */,
+				0367A5C2190C646B00D11AA8 /* AppDelegate.mm in Sources */,
 				0367A5BE190C646B00D11AA8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +486,7 @@
 				0367A5E9190C646B00D11AA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0367A5EA190C646B00D11AA8 /* Build configuration list for PBXNativeTarget "openGL_TemplateTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +495,7 @@
 				0367A5EC190C646B00D11AA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
