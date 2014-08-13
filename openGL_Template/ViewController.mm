@@ -7,11 +7,10 @@
 //
 
 #import "ViewController.h"
-#include <vector>
-#include "lodepng.h"
+
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
-using namespace std;
+
 GLfloat cubeVertexData[192] =
 {
     // Data layout for each line below is:
@@ -63,6 +62,7 @@ int Box_index[36]={
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
     
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 
@@ -119,35 +119,25 @@ int Box_index[36]={
     //7. Get the location of the shader attribute called "normal"
     
     GLuint normalLocation=glGetAttribLocation(programObject, "normal");
-    
-    GLuint texLocation=glGetAttribLocation(programObject, "texture");
+   
     
     //8. Enable both locations
     
     glEnableVertexAttribArray(positionLocation);
     
     glEnableVertexAttribArray(normalLocation);
-    
-    glEnableVertexAttribArray(texLocation);
-    
-    
-    
+  
+
     //9. Link the buffer data to the shader attribute locations
     
     glVertexAttribPointer(positionLocation, 3, GL_FLOAT, GL_FALSE, 32, BUFFER_OFFSET(20));
     glVertexAttribPointer(normalLocation, 3, GL_FLOAT, GL_FALSE, 32, BUFFER_OFFSET(8));
-    glVertexAttribPointer(texLocation, 2, GL_FLOAT, GL_FALSE, 32, BUFFER_OFFSET(0));
+    
     
     //11. Get Location of uniforms
     modelViewProjectionUniformLocation = glGetUniformLocation(programObject, "modelViewProjectionMatrix");
     normalMatrixUniformLocation = glGetUniformLocation(programObject, "normalMatrix");
-    textureUniformLocation=glGetUniformLocation(programObject, "Tex");
-    
-    
-    glActiveTexture(GL_TEXTURE0);
-    glGenTextures(1, &textureID[0]);
-    glBindTexture(GL_TEXTURE_2D, textureID[0]);
-    [self loadTexture];
+  
     //10. Unbind the Vertex Array Object
     glBindVertexArrayOES(0);
     
@@ -197,16 +187,12 @@ int Box_index[36]={
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     
-    glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     glBindVertexArrayOES(vertexArrayObject);
     
     glUseProgram(programObject);
-    
-   glActiveTexture(GL_TEXTURE0);
-   glBindTexture(GL_TEXTURE_2D, textureID[0]);
-   glUniform1i(textureUniformLocation, 0);
     
     glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_INT,Box_index);
     
@@ -214,67 +200,6 @@ int Box_index[36]={
 }
 
 #pragma mark -  OpenGL ES 2 shader compilation
-
--(void)loadTexture{
-
-    // Load file and decode image.
-    vector<unsigned char> image;
-    unsigned int width, height;
-    
-    unsigned error = lodepng::decode(image, width, height,"Plywood.png");
-    
-    //if there's an error, display it
-    if(error){
-        NSLog(@"Error loading image");
-    }else{
-        
-        //Flip and invert the image
-        unsigned char* imagePtr=&image[0];
-        
-        int halfTheHeightInPixels=height/2;
-        int heightInPixels=height;
-        
-        
-        //Assume RGBA for 4 components per pixel
-        int numColorComponents=4;
-        
-        //Assuming each color component is an unsigned char
-        int widthInChars=width*numColorComponents;
-        
-        unsigned char *top=NULL;
-        unsigned char *bottom=NULL;
-        unsigned char temp=0;
-        
-        for( int h = 0; h < halfTheHeightInPixels; ++h )
-        {
-            top = imagePtr + h * widthInChars;
-            bottom = imagePtr + (heightInPixels - h - 1) * widthInChars;
-            
-            for( int w = 0; w < widthInChars; ++w )
-            {
-                // Swap the chars around.
-                temp = *top;
-                *top = *bottom;
-                *bottom = temp;
-                
-                ++top;
-                ++bottom;
-            }
-        }
-        
-        
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_LINEAR);
-        
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_REPEAT);
-        
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0,
-                     GL_RGBA, GL_UNSIGNED_BYTE, &image[0]);
-        
-    }
-    
-}
 
 
 -(void)loadShaders{

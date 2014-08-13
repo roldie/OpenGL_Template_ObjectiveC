@@ -8,7 +8,6 @@
 
 attribute vec4 position;
 attribute vec3 normal;
-attribute vec2 texture;
 
 varying lowp vec4 colorVarying;
 
@@ -19,8 +18,6 @@ varying mediump vec2 vVaryingTexCoords;
 
 void main()
 {
-    
-    vVaryingTexCoords=texture;
     
     vec3 eyeNormal = normalize(normalMatrix * normal);
     vec3 lightPosition = vec3(0.0, 0.0, 1.0);

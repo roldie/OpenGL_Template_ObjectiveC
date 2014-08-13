@@ -10,15 +10,13 @@
 #import <GLKit/GLKit.h>
 
 @interface ViewController : GLKViewController{
-    
-    GLuint textureID[16];
+
     GLuint programObject;
     GLuint vertexArrayObject;
     GLuint vertexBufferObject;
     
     GLint modelViewProjectionUniformLocation;
     GLint normalMatrixUniformLocation;
-    GLint textureUniformLocation;
     
     float aspect;
     GLKMatrix4 projectionMatrix;
@@ -34,7 +32,6 @@
 
 - (void)setupGL;
 - (void)tearDownGL;
--(void)loadTexture;
 - (void)loadShaders;
 - (void)setTransformations;
 
