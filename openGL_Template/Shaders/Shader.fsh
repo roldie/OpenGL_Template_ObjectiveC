@@ -7,10 +7,11 @@
 //
 
 varying lowp vec4 colorVarying;
-
+varying mediump vec2 vVaryingTexCoords;
+uniform sampler2D Tex;
 
 void main()
 {
-    gl_FragColor = colorVarying;
-    
+    //gl_FragColor = colorVarying;
+    gl_FragColor=texture2D(Tex,vVaryingTexCoords.st);
 }

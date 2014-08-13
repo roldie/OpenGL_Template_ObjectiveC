@@ -18,6 +18,7 @@
     
     GLint modelViewProjectionUniformLocation;
     GLint normalMatrixUniformLocation;
+    GLint textureUniformLocation;
     
     float aspect;
     GLKMatrix4 projectionMatrix;
@@ -33,6 +34,7 @@
 
 - (void)setupGL;
 - (void)tearDownGL;
+-(void)loadTexture;
 - (void)loadShaders;
 - (void)setTransformations;
 
